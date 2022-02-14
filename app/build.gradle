@@ -1,0 +1,112 @@
+apply from: '../config.gradle'
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-parcelize'
+
+android {
+    def ext = rootProject.extensions.ext
+
+    compileSdkVersion ext.android.compileSdk
+
+    defaultConfig {
+        applicationId 'com.github.ai.podlodka'
+        minSdkVersion ext.android.minSdk
+        targetSdkVersion ext.android.targetSdk
+        versionCode ext.version.clientVersionCode
+        versionName ext.version.clientVersionName
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+        vectorDrawables.useSupportLibrary true
+        multiDexEnabled true
+    }
+
+    buildFeatures {
+        compose true
+        viewBinding true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file("../keys/debug.keystore")
+        }
+        release {
+            // TODO
+        }
+    }
+
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.debug
+            debuggable true
+            minifyEnabled false
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
+
+    lintOptions {
+        checkReleaseBuilds true
+        abortOnError false
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion "$kotlinCompilerApiVersion"
+    }
+}
+
+dependencies {
+    // MultiDex
+    implementation "androidx.multidex:multidex:$multidexVersion"
+
+    // DI
+    implementation "io.insert-koin:koin-android:$koinVersion"
+    implementation "io.insert-koin:koin-core:$koinVersion"
+    implementation "io.insert-koin:koin-androidx-viewmodel:$koinVersion"
+
+    // Lifecycle libraries
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycleVersion"
+
+    // AndroidX libraries
+    implementation "androidx.appcompat:appcompat:$appCompatVersion"
+    implementation "androidx.annotation:annotation:$annotationsVersion"
+
+    // Android KTX
+    implementation "androidx.core:core-ktx:$coreKtxVersion"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-livedata-core-ktx:$lifecycleVersion"
+    implementation "androidx.activity:activity-ktx:$activityKtxVersion"
+    implementation "androidx.preference:preference-ktx:$preferenceLibrary"
+
+    // Kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+    implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
+
+    // Compose
+    implementation "androidx.activity:activity-compose:$activityComposeVersion"
+    implementation "androidx.compose.material:material:$composeVersion"
+    implementation "androidx.compose.ui:ui-tooling:$composeVersion"
+    implementation "androidx.compose.runtime:runtime-livedata:$composeVersion"
+    implementation "androidx.constraintlayout:constraintlayout-compose:$constrainLayoutComposeVersion"
+
+    // Coil
+    implementation "io.coil-kt:coil:$coilVersion"
+    implementation "io.coil-kt:coil-compose:$coilVersion"
+}
