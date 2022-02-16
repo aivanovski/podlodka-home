@@ -2,6 +2,7 @@ package com.github.ai.podlodka.di
 
 import com.github.ai.podlodka.domain.DateFormatProvider
 import com.github.ai.podlodka.domain.ResourceProvider
+import com.github.ai.podlodka.domain.ResourceProviderImpl
 import com.github.ai.podlodka.domain.home.HomeInteractor
 import com.github.ai.podlodka.domain.home.MockedHomeInteractor
 import com.github.ai.podlodka.presentation.core.CellViewModelFactory
@@ -13,7 +14,7 @@ import org.koin.dsl.module
 object KoinModule {
 
     val appModule = module {
-        single { ResourceProvider(get()) }
+        single { ResourceProviderImpl(get()) as ResourceProvider }
         single { DateFormatProvider() }
 
         // factories

@@ -14,9 +14,6 @@ import com.github.ai.podlodka.presentation.home.cells.model.RatingCellModel
 import com.github.ai.podlodka.presentation.home.cells.model.SectionTitleCellModel
 import com.github.ai.podlodka.presentation.home.cells.model.TagsCellModel
 import com.github.ai.podlodka.presentation.home.cells.model.TitleWithImageCellModel
-import com.github.ai.podlodka.presentation.home.cells.ui.CommentCell
-import com.github.ai.podlodka.presentation.home.cells.viewmodel.ButtonCellViewModel
-import com.github.ai.podlodka.presentation.theme.primaryTitleColor
 import java.util.Date
 
 class HomeCellModelFactory(

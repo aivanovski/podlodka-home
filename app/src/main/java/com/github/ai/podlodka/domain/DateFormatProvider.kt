@@ -4,7 +4,7 @@ import java.text.DateFormat
 import java.text.SimpleDateFormat
 import java.util.Locale
 
-class DateFormatProvider {
+class DateFormatProvider  {
 
     fun getDateFormat(): DateFormat = DATE_FORMAT
 
