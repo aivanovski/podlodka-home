@@ -16,7 +16,7 @@ import com.github.ai.podlodka.presentation.home.cells.model.TagsCellModel
 import com.github.ai.podlodka.presentation.home.cells.model.TitleWithImageCellModel
 import java.util.Date
 
-class HomeCellModelFactory(
+class HomeCellModelFactory (
     private val resourceProvider: ResourceProvider,
     private val dateFormatProvider: DateFormatProvider
 ) {
