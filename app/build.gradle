@@ -13,8 +13,8 @@ android {
         applicationId 'com.github.ai.podlodka'
         minSdkVersion ext.android.minSdk
         targetSdkVersion ext.android.targetSdk
-        versionCode ext.version.clientVersionCode
-        versionName ext.version.clientVersionName
+        versionCode 1
+        versionName "0.1.0"
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
         vectorDrawables.useSupportLibrary true
         multiDexEnabled true
