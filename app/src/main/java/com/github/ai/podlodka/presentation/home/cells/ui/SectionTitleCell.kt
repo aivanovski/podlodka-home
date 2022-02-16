@@ -16,9 +16,9 @@ import com.github.ai.podlodka.presentation.theme.primaryTitleColor
 fun SectionTitleCell(viewModel: SectionTitleCellViewModel) {
     Text(
         text = viewModel.model.title,
-        fontSize = 19.sp,
+        fontSize = 16.sp,
         color = primaryTitleColor,
-        modifier = Modifier.padding(start = 24.dp)
+        modifier = Modifier.padding(start = 24.dp, top = 12.dp, bottom = 12.dp)
     )
 }
 

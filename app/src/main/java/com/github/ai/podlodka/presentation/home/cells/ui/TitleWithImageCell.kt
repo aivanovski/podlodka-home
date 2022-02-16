@@ -1,13 +1,15 @@
 package com.github.ai.podlodka.presentation.home.cells.ui
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
+import androidx.compose.material.Card
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -29,12 +31,13 @@ import com.github.ai.podlodka.presentation.theme.AppTheme
 import com.github.ai.podlodka.presentation.theme.backgroundColor
 import com.github.ai.podlodka.presentation.theme.hintColor
 import com.github.ai.podlodka.presentation.theme.placeHolderColor
-import com.github.ai.podlodka.presentation.theme.primaryTitleColor
 
 @Composable
 fun TitleWithImageCell(viewModel: TitleWithImageCellViewModel) {
     ConstraintLayout(
-        modifier = Modifier.fillMaxWidth()
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(bottom = 12.dp)
     ) {
         val (image, icon, title, titleBackground, stars, ratingsText) = createRefs()
 
@@ -66,43 +69,48 @@ fun TitleWithImageCell(viewModel: TitleWithImageCellViewModel) {
         Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(96.dp)
+                .height(64.dp)
                 .background(color = backgroundColor)
                 .constrainAs(titleBackground) {
                     bottom.linkTo(image.bottom)
                 }
         )
 
-        Box(
+        Card(
+            elevation = 0.dp,
+            backgroundColor = Color.Black,
+            border = BorderStroke(width = 1.dp, color = Color(0xFF1f2430)),
             modifier = Modifier
-                .size(width = 84.dp, height = 84.dp)
-                .background(color = Color.Green)
+                .size(84.dp)
                 .constrainAs(icon) {
                     bottom.linkTo(image.bottom)
                     start.linkTo(parent.start, margin = 24.dp)
                 }
         ) {
-            val painter = rememberImagePainter(
-                data = viewModel.model.iconUrl
-            )
+            Box(
+                modifier = Modifier.fillMaxSize()
+            ) {
+                val painter = rememberImagePainter(
+                    data = viewModel.model.iconUrl
+                )
 
-            Image(
-                painter = painter,
-                contentDescription = "icon",
-                contentScale = ContentScale.Crop,
-                modifier = Modifier
-                    .width(54.dp)
-                    .height(54.dp)
-                    .align(Alignment.Center)
-            )
-
-            if (painter.state.shouldShowPlaceholder()) {
-                ImagePlaceHolder(
+                Image(
+                    painter = painter,
+                    contentDescription = "icon",
+                    contentScale = ContentScale.Crop,
                     modifier = Modifier
-                        .size(width = 54.dp, height = 54.dp)
-                        .background(placeHolderColor)
+                        .size(54.dp)
                         .align(Alignment.Center)
                 )
+
+                if (painter.state.shouldShowPlaceholder()) {
+                    ImagePlaceHolder(
+                        modifier = Modifier
+                            .size(width = 54.dp, height = 54.dp)
+                            .background(placeHolderColor)
+                            .align(Alignment.Center)
+                    )
+                }
             }
         }
 
@@ -128,7 +136,7 @@ fun TitleWithImageCell(viewModel: TitleWithImageCellViewModel) {
 
         Text(
             text = viewModel.model.ratingsCount,
-            fontSize = 14.sp,
+            fontSize = 12.sp,
             color = hintColor,
             modifier = Modifier
                 .constrainAs(ratingsText) {

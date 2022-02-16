@@ -60,7 +60,7 @@ fun CommentCell(viewModel: CommentCellViewModel) {
 
         Text(
             text = viewModel.model.username,
-            fontSize = 19.sp,
+            fontSize = 16.sp,
             color = primaryTitleColor,
             modifier = Modifier
                 .constrainAs(name) {
@@ -74,8 +74,8 @@ fun CommentCell(viewModel: CommentCellViewModel) {
 
         Text(
             text = viewModel.model.date,
-            fontSize = 14.sp,
-            color = Color(0x44FFFFFF),
+            fontSize = 12.sp,
+            color = Color(0x66FFFFFF),
             modifier = Modifier
                 .constrainAs(date) {
                     top.linkTo(name.bottom)
@@ -88,7 +88,7 @@ fun CommentCell(viewModel: CommentCellViewModel) {
 
         Text(
             text = viewModel.model.text,
-            fontSize = 20.sp,
+            fontSize = 12.sp,
             color = Color(0xFFA8ADB7),
             modifier = Modifier
                 .constrainAs(text) {

@@ -1,6 +1,5 @@
 package com.github.ai.podlodka.presentation.home.cells.ui
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding

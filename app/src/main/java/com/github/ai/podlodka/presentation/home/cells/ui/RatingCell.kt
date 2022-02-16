@@ -8,6 +8,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.modifier.modifierLocalConsumer
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -22,10 +23,12 @@ import com.github.ai.podlodka.presentation.theme.primaryTitleColor
 
 @Composable
 fun RatingCell(viewModel: RatingCellViewModel) {
-    Row {
+    Row(
+        modifier = Modifier.padding(bottom = 12.dp)
+    ) {
         Text(
             text = viewModel.model.rating.toString(),
-            fontSize = 56.sp,
+            fontSize = 48.sp,
             color = primaryTitleColor,
             modifier = Modifier
                 .padding(start = 24.dp)
@@ -38,7 +41,9 @@ fun RatingCell(viewModel: RatingCellViewModel) {
         ) {
             RatingBar(rating = 4.9f)
             Text(
-                text = stringResource(R.string.reviews_with_count, viewModel.model.ratingsCount)
+                text = stringResource(R.string.reviews_with_count, viewModel.model.ratingsCount),
+                fontSize = 12.sp,
+                color = Color(0xFFA8ADB7)
             )
         }
     }

@@ -1,10 +1,12 @@
 package com.github.ai.podlodka.presentation.home.cells.ui
 
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.github.ai.podlodka.domain.home.MockedHomeInteractor.Companion.MOCKED_ENTITY
 import com.github.ai.podlodka.presentation.home.cells.model.DescriptionCellModel
@@ -16,9 +18,11 @@ import com.github.ai.podlodka.presentation.theme.primaryDescriptionColor
 fun DescriptionCell(viewModel: DescriptionCellViewModel) {
     Text(
         text = viewModel.model.description,
-        fontSize = 19.sp,
+        fontSize = 12.sp,
         color = primaryDescriptionColor,
-        modifier = Modifier.fillMaxWidth()
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(start = 24.dp, end = 24.dp, top = 12.dp, bottom = 12.dp)
     )
 }
 
