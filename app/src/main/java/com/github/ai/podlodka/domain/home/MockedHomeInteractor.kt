@@ -33,16 +33,20 @@ class MockedHomeInteractor : HomeInteractor {
                 CommentEntity(
                     username = "Auguste Conte",
                     userImageUrl = "https://s3-alpha-sig.figma.com/img/50d7/87dc/de907b9c097cd7f9ce6f8703ed2b03f1?Expires=1646006400&Signature=CZHndBeUk9JKD~g2~bG7JNhQ5bKU289gV5~CEYDrj83KmmSH9TtI~IgGupDLfvlUcfz2bHED66DBeBzGpnYYJeTkEE5DrsxUdXO6kNCp7gG7JAxmNVFUlUlPaiAS2dxClyfLGe3ZbcGiP6CNvAr5jJHFGqtdsSUsmWM8nYR9rvRT5GfO9NeY3FDJhRL1K3OwDDOcUa08Kld0IzQJstQ2xRcudx3c0meULHxDs8jc5~BN2IIa-L19McfoCi6jaXmGqdkpOAogz2yaVa1FxXxJO6XwnRsLB6QJY9IOJRYFdYmcASXx9mY4WHNuh3WGXKt~8Gy1myecURYOxd1QF7L5Ag__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA",
-                    timestamp = DATE_FORMAT.parse("2019.02.14")?.time ?: throw IllegalStateException(),
+                    timestamp = parseTimestamp("2019.02.14"),
                     text = "“Once you start to learn its secrets, there’s a wild and exciting variety of play here that’s unmatched, even by its peers.”"
                 ),
                 CommentEntity(
                     username = "Jang Marcelino",
                     userImageUrl = "https://s3-alpha-sig.figma.com/img/6212/e251/4d28d9fa8e1c1ffdeb79b8525b209e00?Expires=1646006400&Signature=TvcGnT-2sraxbdSD2WXZ7X6CRKgkzf36IkO7wZeTjIqsvjQsNHuMCrYKkGW-2rCmbaKFQgjHMVOq1T5WzMipsa4gzH~0ykN8IWCnyyh7wXe4~iGhg3GAxs2VABgtZM7z-XfByMVKIMCwN7rHxgr66f6pkkiJbccpLtcmcY3rWBYY0oM3WzUq5m5c1BuCAaLx4SG~6-2TMXe3dAqFC4LLm9nz0~v~Vx-O0ILDaQWYahc8ecHSjZzin5r89H0hnibCkOZyCQ~0VDfh-DiJvXWcIHuD27j2BG65af5VnbBJey38nvzxj3JVVdj7uI5qyI3So4VUJYxtm~PgAaZqp2rIQQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA",
-                    timestamp = DATE_FORMAT.parse("2019.02.14")?.time ?: throw IllegalStateException(),
+                    timestamp = parseTimestamp("2019.02.14"),
                     text = "“Once you start to learn its secrets, there’s a wild and exciting variety of play here that’s unmatched, even by its peers.”"
                 )
             )
         )
+
+        private fun parseTimestamp(date: String): Long {
+            return DATE_FORMAT.parse(date)?.time ?: throw IllegalStateException()
+        }
     }
 }
