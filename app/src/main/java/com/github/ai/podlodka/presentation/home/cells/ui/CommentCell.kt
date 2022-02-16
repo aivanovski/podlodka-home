@@ -19,7 +19,7 @@ import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
 import coil.compose.rememberImagePainter
 import com.github.ai.podlodka.domain.home.MockedHomeInteractor.Companion.MOCKED_ENTITY
-import com.github.ai.podlodka.presentation.core.ui.ImagePlaceHolder
+import com.github.ai.podlodka.presentation.core.ui.Placeholder
 import com.github.ai.podlodka.presentation.core.ui.shouldShowPlaceholder
 import com.github.ai.podlodka.presentation.home.cells.model.CommentCellModel
 import com.github.ai.podlodka.presentation.home.cells.viewmodel.CommentCellViewModel
@@ -54,7 +54,7 @@ fun CommentCell(viewModel: CommentCellViewModel) {
             )
 
             if (painter.state.shouldShowPlaceholder()) {
-                ImagePlaceHolder()
+                Placeholder()
             }
         }
 

@@ -1,6 +1,5 @@
 package com.github.ai.podlodka.presentation.home.cells.ui
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -8,18 +7,20 @@ import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import coil.compose.ImagePainter
 import coil.compose.rememberImagePainter
+import com.github.ai.podlodka.R
 import com.github.ai.podlodka.domain.home.MockedHomeInteractor.Companion.MOCKED_ENTITY
 import com.github.ai.podlodka.presentation.home.cells.model.ImagesCellModel
 import com.github.ai.podlodka.presentation.home.cells.viewmodel.ImagesCellViewModel
-import com.github.ai.podlodka.presentation.core.ui.ImagePlaceHolder
-import com.github.ai.podlodka.presentation.core.ui.shouldShowPlaceholder
-import com.github.ai.podlodka.presentation.core.theme.PreviewWithBackground
+import com.github.ai.podlodka.presentation.core.theme.SmallPreviewWithBackground
+import com.github.ai.podlodka.presentation.core.ui.ButtonWithIcon
+import com.github.ai.podlodka.presentation.core.ui.ImageWithPlaceholder
 
 @Composable
 fun ImagesCell(viewModel: ImagesCellViewModel) {
@@ -44,14 +45,18 @@ fun ImagesCell(viewModel: ImagesCellViewModel) {
                     data = imageUrl
                 )
 
-                Image(
-                    painter = painter,
-                    contentDescription = "video",
-                    contentScale = ContentScale.Crop
+                ImageWithPlaceholder(
+                    painter = painter
                 )
 
-                if (painter.state.shouldShowPlaceholder()) {
-                    ImagePlaceHolder()
+                if (painter.state is ImagePainter.State.Success) {
+                    ButtonWithIcon(
+                        iconResId = R.drawable.ic_play_24dp,
+                        iconSize = 18.dp,
+                        modifier = Modifier
+                            .size(48.dp)
+                            .align(Alignment.Center)
+                    )
                 }
             }
         }
@@ -65,7 +70,7 @@ fun ImagesCellPreview() {
         imageUrls = MOCKED_ENTITY.videos
     )
 
-    PreviewWithBackground {
+    SmallPreviewWithBackground {
         ImagesCell(viewModel = ImagesCellViewModel(model))
     }
 }

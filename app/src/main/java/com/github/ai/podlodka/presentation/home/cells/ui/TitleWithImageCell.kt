@@ -1,7 +1,6 @@
 package com.github.ai.podlodka.presentation.home.cells.ui
 
 import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -9,28 +8,25 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
 import coil.compose.rememberImagePainter
 import com.github.ai.podlodka.domain.home.MockedHomeInteractor.Companion.MOCKED_ENTITY
-import com.github.ai.podlodka.presentation.core.ui.ImagePlaceHolder
 import com.github.ai.podlodka.presentation.core.ui.RatingBar
-import com.github.ai.podlodka.presentation.core.ui.shouldShowPlaceholder
 import com.github.ai.podlodka.presentation.home.cells.model.TitleWithImageCellModel
 import com.github.ai.podlodka.presentation.home.cells.viewmodel.TitleWithImageCellViewModel
 import com.github.ai.podlodka.presentation.core.theme.AppTheme
 import com.github.ai.podlodka.presentation.core.theme.backgroundColor
 import com.github.ai.podlodka.presentation.core.theme.hintColor
-import com.github.ai.podlodka.presentation.core.theme.placeHolderColor
+import com.github.ai.podlodka.presentation.core.ui.ImageWithPlaceholder
 
 @Composable
 fun TitleWithImageCell(viewModel: TitleWithImageCellViewModel) {
@@ -54,16 +50,9 @@ fun TitleWithImageCell(viewModel: TitleWithImageCellViewModel) {
                 data = viewModel.model.imageUrl
             )
 
-            Image(
-                painter = painter,
-                contentDescription = "landing",
-                contentScale = ContentScale.Crop,
-                modifier = Modifier.fillMaxSize()
+            ImageWithPlaceholder(
+                painter = painter
             )
-
-            if (painter.state.shouldShowPlaceholder()) {
-                ImagePlaceHolder()
-            }
         }
 
         Box(
@@ -80,6 +69,7 @@ fun TitleWithImageCell(viewModel: TitleWithImageCellViewModel) {
             elevation = 0.dp,
             backgroundColor = Color.Black,
             border = BorderStroke(width = 1.dp, color = Color(0xFF1f2430)),
+            shape = RoundedCornerShape(16.dp),
             modifier = Modifier
                 .size(84.dp)
                 .constrainAs(icon) {
@@ -88,29 +78,17 @@ fun TitleWithImageCell(viewModel: TitleWithImageCellViewModel) {
                 }
         ) {
             Box(
-                modifier = Modifier.fillMaxSize()
+                modifier = Modifier
+                    .padding(14.dp)
+                    .fillMaxSize()
             ) {
                 val painter = rememberImagePainter(
                     data = viewModel.model.iconUrl
                 )
 
-                Image(
-                    painter = painter,
-                    contentDescription = "icon",
-                    contentScale = ContentScale.Crop,
-                    modifier = Modifier
-                        .size(54.dp)
-                        .align(Alignment.Center)
+                ImageWithPlaceholder(
+                    painter = painter
                 )
-
-                if (painter.state.shouldShowPlaceholder()) {
-                    ImagePlaceHolder(
-                        modifier = Modifier
-                            .size(width = 54.dp, height = 54.dp)
-                            .background(placeHolderColor)
-                            .align(Alignment.Center)
-                    )
-                }
             }
         }
 
