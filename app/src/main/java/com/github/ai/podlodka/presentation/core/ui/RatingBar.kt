@@ -6,12 +6,11 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.modifier.modifierLocalConsumer
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.github.ai.podlodka.R
-import com.github.ai.podlodka.presentation.theme.SmallPreviewWithBackground
+import com.github.ai.podlodka.presentation.core.theme.SmallPreviewWithBackground
 
 @Composable
 fun RatingBar(rating: Float, modifier: Modifier = Modifier) {

@@ -19,7 +19,7 @@ import com.github.ai.podlodka.presentation.home.cells.model.ImagesCellModel
 import com.github.ai.podlodka.presentation.home.cells.viewmodel.ImagesCellViewModel
 import com.github.ai.podlodka.presentation.core.ui.ImagePlaceHolder
 import com.github.ai.podlodka.presentation.core.ui.shouldShowPlaceholder
-import com.github.ai.podlodka.presentation.theme.PreviewWithBackground
+import com.github.ai.podlodka.presentation.core.theme.PreviewWithBackground
 
 @Composable
 fun ImagesCell(viewModel: ImagesCellViewModel) {

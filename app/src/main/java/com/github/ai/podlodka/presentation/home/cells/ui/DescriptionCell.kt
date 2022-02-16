@@ -11,8 +11,8 @@ import androidx.compose.ui.unit.sp
 import com.github.ai.podlodka.domain.home.MockedHomeInteractor.Companion.MOCKED_ENTITY
 import com.github.ai.podlodka.presentation.home.cells.model.DescriptionCellModel
 import com.github.ai.podlodka.presentation.home.cells.viewmodel.DescriptionCellViewModel
-import com.github.ai.podlodka.presentation.theme.PreviewWithBackground
-import com.github.ai.podlodka.presentation.theme.primaryDescriptionColor
+import com.github.ai.podlodka.presentation.core.theme.PreviewWithBackground
+import com.github.ai.podlodka.presentation.core.theme.primaryDescriptionColor
 
 @Composable
 fun DescriptionCell(viewModel: DescriptionCellViewModel) {

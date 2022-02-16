@@ -1,4 +1,4 @@
-package com.github.ai.podlodka.presentation.theme
+package com.github.ai.podlodka.presentation.core.theme
 
 import androidx.compose.material.lightColors
 import androidx.compose.ui.graphics.Color

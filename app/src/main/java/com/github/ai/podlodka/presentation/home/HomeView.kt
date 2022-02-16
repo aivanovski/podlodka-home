@@ -1,11 +1,8 @@
 package com.github.ai.podlodka.presentation.home
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
@@ -31,8 +28,8 @@ import com.github.ai.podlodka.presentation.core.BaseCellViewModel
 import com.github.ai.podlodka.presentation.core.CellFactory
 import com.github.ai.podlodka.presentation.core.CellViewModelFactory
 import com.github.ai.podlodka.presentation.home.cells.HomeCellModelFactory
-import com.github.ai.podlodka.presentation.theme.PreviewWithBackground
-import com.github.ai.podlodka.presentation.theme.primaryColor
+import com.github.ai.podlodka.presentation.core.theme.PreviewWithBackground
+import com.github.ai.podlodka.presentation.core.theme.primaryColor
 
 @Composable
 fun HomeScreen(viewModel: HomeViewModel) {

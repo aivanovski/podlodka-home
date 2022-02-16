@@ -10,7 +10,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.github.ai.podlodka.presentation.home.cells.model.DividerCellModel
 import com.github.ai.podlodka.presentation.home.cells.viewmodel.DividerCellViewModel
-import com.github.ai.podlodka.presentation.theme.PreviewWithBackground
+import com.github.ai.podlodka.presentation.core.theme.PreviewWithBackground
 
 @Composable
 fun DividerCell(viewModel: DividerCellViewModel) {

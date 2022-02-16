@@ -13,7 +13,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.github.ai.podlodka.presentation.home.cells.model.ButtonCellModel
 import com.github.ai.podlodka.presentation.home.cells.viewmodel.ButtonCellViewModel
-import com.github.ai.podlodka.presentation.theme.PreviewWithBackground
+import com.github.ai.podlodka.presentation.core.theme.PreviewWithBackground
 
 @Composable
 fun ButtonCell(viewModel: ButtonCellViewModel) {

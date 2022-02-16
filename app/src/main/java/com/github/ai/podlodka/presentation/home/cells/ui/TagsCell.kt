@@ -7,19 +7,17 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Divider
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.modifier.modifierLocalConsumer
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.github.ai.podlodka.presentation.home.cells.model.TagsCellModel
 import com.github.ai.podlodka.presentation.home.cells.viewmodel.TagsCellViewModel
-import com.github.ai.podlodka.presentation.theme.PreviewWithBackground
+import com.github.ai.podlodka.presentation.core.theme.PreviewWithBackground
 
 @Composable
 fun TagsCell(viewModel: TagsCellViewModel) {

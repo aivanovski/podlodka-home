@@ -10,8 +10,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.github.ai.podlodka.presentation.theme.AppTheme
-import com.github.ai.podlodka.presentation.theme.placeHolderColor
+import com.github.ai.podlodka.presentation.core.theme.AppTheme
+import com.github.ai.podlodka.presentation.core.theme.placeHolderColor
 
 @Composable
 fun ImagePlaceHolder(

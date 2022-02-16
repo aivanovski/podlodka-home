@@ -23,8 +23,8 @@ import com.github.ai.podlodka.presentation.core.ui.ImagePlaceHolder
 import com.github.ai.podlodka.presentation.core.ui.shouldShowPlaceholder
 import com.github.ai.podlodka.presentation.home.cells.model.CommentCellModel
 import com.github.ai.podlodka.presentation.home.cells.viewmodel.CommentCellViewModel
-import com.github.ai.podlodka.presentation.theme.PreviewWithBackground
-import com.github.ai.podlodka.presentation.theme.primaryTitleColor
+import com.github.ai.podlodka.presentation.core.theme.PreviewWithBackground
+import com.github.ai.podlodka.presentation.core.theme.primaryTitleColor
 
 @Composable
 fun CommentCell(viewModel: CommentCellViewModel) {

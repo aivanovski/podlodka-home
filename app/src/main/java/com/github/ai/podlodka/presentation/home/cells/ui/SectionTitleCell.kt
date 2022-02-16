@@ -9,8 +9,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.github.ai.podlodka.presentation.home.cells.model.SectionTitleCellModel
 import com.github.ai.podlodka.presentation.home.cells.viewmodel.SectionTitleCellViewModel
-import com.github.ai.podlodka.presentation.theme.PreviewWithBackground
-import com.github.ai.podlodka.presentation.theme.primaryTitleColor
+import com.github.ai.podlodka.presentation.core.theme.PreviewWithBackground
+import com.github.ai.podlodka.presentation.core.theme.primaryTitleColor
 
 @Composable
 fun SectionTitleCell(viewModel: SectionTitleCellViewModel) {

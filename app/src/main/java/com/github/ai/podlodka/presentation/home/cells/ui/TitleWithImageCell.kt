@@ -27,10 +27,10 @@ import com.github.ai.podlodka.presentation.core.ui.RatingBar
 import com.github.ai.podlodka.presentation.core.ui.shouldShowPlaceholder
 import com.github.ai.podlodka.presentation.home.cells.model.TitleWithImageCellModel
 import com.github.ai.podlodka.presentation.home.cells.viewmodel.TitleWithImageCellViewModel
-import com.github.ai.podlodka.presentation.theme.AppTheme
-import com.github.ai.podlodka.presentation.theme.backgroundColor
-import com.github.ai.podlodka.presentation.theme.hintColor
-import com.github.ai.podlodka.presentation.theme.placeHolderColor
+import com.github.ai.podlodka.presentation.core.theme.AppTheme
+import com.github.ai.podlodka.presentation.core.theme.backgroundColor
+import com.github.ai.podlodka.presentation.core.theme.hintColor
+import com.github.ai.podlodka.presentation.core.theme.placeHolderColor
 
 @Composable
 fun TitleWithImageCell(viewModel: TitleWithImageCellViewModel) {
