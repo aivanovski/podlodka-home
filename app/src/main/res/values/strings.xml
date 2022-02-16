@@ -1,5 +1,8 @@
 <resources>
 
     <string name="app_name">Podlodka Home</string>
+    <string name="review_and_ratings">Review &amp; Ratings</string>
+    <string name="install">Install</string>
+    <string name="reviews_with_count">%s Reviews</string>
 
 </resources>

@@ -85,7 +85,10 @@ dependencies {
 
     // AndroidX libraries
     implementation "androidx.appcompat:appcompat:$appCompatVersion"
+    implementation "com.google.android.material:material:$androidXVersion"
+    implementation "androidx.recyclerview:recyclerview:$recyclerViewVersion"
     implementation "androidx.annotation:annotation:$annotationsVersion"
+    implementation "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
 
     // Android KTX
     implementation "androidx.core:core-ktx:$coreKtxVersion"
