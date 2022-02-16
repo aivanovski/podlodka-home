@@ -1,0 +1,27 @@
+name: Build Application
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Build
+        run: |
+          ./gradlew app:assembleDebug
+
+      - name: Store APK file
+        uses: actions/upload-artifact@v2
+        with:
+          name: Podlodka Home
+          path: |
+              ./app/build/outputs/apk/debug/podlodka-home-debug.apk
