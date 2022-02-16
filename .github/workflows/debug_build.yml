@@ -24,4 +24,4 @@ jobs:
         with:
           name: Podlodka Home
           path: |
-              ./app/build/outputs/apk/debug/podlodka-home-debug.apk
+              ./app/build/outputs/apk/debug/app-debug.apk
