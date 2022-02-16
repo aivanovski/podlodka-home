@@ -39,7 +39,7 @@ fun TitleWithImageCell(viewModel: TitleWithImageCellViewModel) {
 
         Box(
             modifier = Modifier
-                .height(300.dp)
+                .height(360.dp)
                 .constrainAs(image) {
                     top.linkTo(parent.top)
                     start.linkTo(parent.start)
