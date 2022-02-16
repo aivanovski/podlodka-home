@@ -4,7 +4,7 @@ data class HomePageEntity(
     val title: String,
     val description: String,
     val reviewCount: Int,
-    val reviewPoints: String,
+    val rating: Float,
     val imageUrl: String,
     val iconUrl: String,
     val videos: List<String>,

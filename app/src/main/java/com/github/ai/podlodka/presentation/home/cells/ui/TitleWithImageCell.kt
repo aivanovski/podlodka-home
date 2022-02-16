@@ -21,6 +21,7 @@ import androidx.constraintlayout.compose.ConstraintLayout
 import coil.compose.rememberImagePainter
 import com.github.ai.podlodka.domain.home.MockedHomeInteractor.Companion.MOCKED_ENTITY
 import com.github.ai.podlodka.presentation.core.ui.ImagePlaceHolder
+import com.github.ai.podlodka.presentation.core.ui.RatingBar
 import com.github.ai.podlodka.presentation.core.ui.shouldShowPlaceholder
 import com.github.ai.podlodka.presentation.home.cells.model.TitleWithImageCellModel
 import com.github.ai.podlodka.presentation.home.cells.viewmodel.TitleWithImageCellViewModel
@@ -39,7 +40,7 @@ fun TitleWithImageCell(viewModel: TitleWithImageCellViewModel) {
 
         Box(
             modifier = Modifier
-                .height(260.dp)
+                .height(300.dp)
                 .constrainAs(image) {
                     top.linkTo(parent.top)
                     start.linkTo(parent.start)
@@ -107,8 +108,8 @@ fun TitleWithImageCell(viewModel: TitleWithImageCellViewModel) {
 
         Text(
             text = viewModel.model.title,
-            fontSize = 26.sp,
-            color = primaryTitleColor,
+            fontSize = 20.sp,
+            color = Color(0xFFFFFFFF),
             modifier = Modifier
                 .constrainAs(title) {
                     start.linkTo(icon.end, margin = 14.dp)
@@ -116,10 +117,9 @@ fun TitleWithImageCell(viewModel: TitleWithImageCellViewModel) {
                 }
         )
 
-        Box(
+        RatingBar(
+            rating = 4.9f,
             modifier = Modifier
-                .size(width = 64.dp, height = 14.dp)
-                .background(color = Color.Yellow)
                 .constrainAs(stars) {
                     start.linkTo(title.start)
                     bottom.linkTo(image.bottom, margin = 12.dp)
@@ -146,6 +146,7 @@ fun TitleWithImageCellPreview() {
     val model = TitleWithImageCellModel(
         title = MOCKED_ENTITY.title,
         ratingsCount = "70 M",
+        rating = MOCKED_ENTITY.rating,
         imageUrl = MOCKED_ENTITY.imageUrl,
         iconUrl = MOCKED_ENTITY.iconUrl
     )

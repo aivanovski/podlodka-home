@@ -17,7 +17,7 @@ class MockedHomeInteractor : HomeInteractor {
             title = "Doka 2",
             description = "Doka 2 is a multiplayer online battle arena (MOBA) game which has two teams of five players compete to collectively destroy a large structure defended by the opposing team known as the \"Ancient\", whilst defending their own.",
             reviewCount = 70_000_000,
-            reviewPoints = "4.9",
+            rating = 4.9f,
             imageUrl = "https://s3-alpha-sig.figma.com/img/284d/401f/f98fb91fbba05e15f99cdcd8e4f9d673?Expires=1646006400&Signature=OAGiVBdLRFBWxvG4UkCHI9QYZQ6UoC2Mo5nag0ZPMmDdPcCG6xKE9-TMgsHvWjfaauYmi8XSHiQyb3fRd5NXPuDWkw5ByMPqj7R97EDvFer8G9pZDXa~5rAMlPuqEggABRYR8zeOd~kKDJsvyyKeVGGUf90JyW6z7kwYZPIKmhfpard6R38-Y9ddX-xbzNTcPE5-7hRSobk3BtUMEJfz5UCKaSaQrZPpsHloNiXeAtI7RDQUuGMLWA5gMc6VFgTeZ4fl0I7K8M~qHIInOUzRbIDjl8gXFXXP0hpitPIfmX9A6vOVdxdjeel2nkQKLyv0ndeO6h3wsmec3WkB38R-0w__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA",
             iconUrl = "https://s3-alpha-sig.figma.com/img/cf52/a010/d2d8badd19c3de46d88b8a74f80aaef6?Expires=1646006400&Signature=fKjHeaX1Ssp55FE~tdNmQrq59XmTpEjLgmr~OSH-SPn0gnP0jJkFK-6o7LZgyKu-JuV8XQMuv0Z326V~-abEw5n~XYr6GxvnePE5VX8PfOcb-u-CGoQ9wB-ynjKUAGnIEeVuVkkNXLCfDFxgAbmBVIc0bhsaA78dPcZs6dsTwYyDU3DNMFeKfV1v7ZwDWbkpCX99hdbGf0lp-vMZJLZ4vImG76xWX9j~UvfH94mrYPdzbM3dtzMJxc66kUW7BCZ2TYU-SqBFs-qW9lQIBRQPh36LMbm7wMzG~N3sMRspeJrVGloeSzV2JKYGrqszoRu5IGYIUJTHl77vxVpvWsaQMg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA",
             videos = listOf(

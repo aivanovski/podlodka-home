@@ -29,6 +29,7 @@ class HomeCellModelFactory(
             TitleWithImageCellModel(
                 title = entity.title,
                 ratingsCount = formatRatingsCount(entity.reviewCount),
+                rating = entity.rating,
                 imageUrl = entity.imageUrl,
                 iconUrl = entity.iconUrl
             ),
@@ -45,7 +46,7 @@ class HomeCellModelFactory(
                 title = resourceProvider.getString(R.string.review_and_ratings)
             ),
             RatingCellModel(
-                rating = "4.9",
+                rating = entity.rating,
                 ratingsCount = formatRatingsCount(entity.reviewCount)
             )
         )

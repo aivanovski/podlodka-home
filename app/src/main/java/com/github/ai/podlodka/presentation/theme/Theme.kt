@@ -28,3 +28,14 @@ fun PreviewWithBackground(content: @Composable () -> Unit) {
         }
     }
 }
+
+@Composable
+fun SmallPreviewWithBackground(content: @Composable () -> Unit) {
+    AppTheme {
+        Box(
+            modifier = Modifier.background(backgroundColor),
+        ) {
+            content.invoke()
+        }
+    }
+}
