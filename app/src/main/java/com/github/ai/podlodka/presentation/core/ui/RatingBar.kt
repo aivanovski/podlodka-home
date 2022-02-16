@@ -3,6 +3,7 @@ package com.github.ai.podlodka.presentation.core.ui
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -23,24 +24,56 @@ fun RatingBar(rating: Float, modifier: Modifier = Modifier) {
     val emptyStars = 5 - filledStars - halfStars
 
     Row(modifier) {
-        repeat(filledStars) {
-            StarIcon(R.drawable.ic_star_filled)
+        repeat(filledStars) { idx ->
+            if (idx != 0) {
+                StarIcon(
+                    iconId = R.drawable.ic_star_filled,
+                    modifier = Modifier.padding(start = 4.dp)
+                )
+            } else {
+                StarIcon(
+                    iconId = R.drawable.ic_star_filled
+                )
+            }
         }
-        repeat(halfStars) {
-            StarIcon(R.drawable.ic_star_half)
+
+        repeat(halfStars) { idx ->
+            if (idx + filledStars != 0) {
+                StarIcon(
+                    iconId = R.drawable.ic_star_half,
+                    modifier = Modifier.padding(start = 4.dp)
+                )
+            } else {
+                StarIcon(
+                    iconId = R.drawable.ic_star_half
+                )
+            }
         }
-        repeat(emptyStars) {
-            StarIcon(R.drawable.ic_star_empty)
+
+        repeat(emptyStars) { idx ->
+            if (idx + (filledStars + halfStars) != 0) {
+                StarIcon(
+                    iconId = R.drawable.ic_star_empty,
+                    modifier = Modifier.padding(start = 4.dp)
+                )
+            } else {
+                StarIcon(
+                    iconId = R.drawable.ic_star_empty
+                )
+            }
         }
     }
 }
 
 @Composable
-private fun StarIcon(@DrawableRes iconResId: Int) {
+private fun StarIcon(
+    @DrawableRes iconId: Int,
+    modifier: Modifier = Modifier
+) {
     Image(
-        painter = painterResource(iconResId),
+        painter = painterResource(iconId),
         contentDescription = "star icon",
-        modifier = Modifier.size(12.dp)
+        modifier = modifier.size(12.dp)
     )
 }
 
