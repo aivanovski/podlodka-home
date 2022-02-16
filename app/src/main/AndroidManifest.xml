@@ -15,7 +15,8 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name="com.github.ai.podlodka.presentation.MainActivity">
+            android:name="com.github.ai.podlodka.presentation.MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
