@@ -34,31 +34,10 @@ class HomeFragment : Fragment() {
             setContent {
                 AppTheme {
                     HomeScreen(viewModel = viewModel)
-                    // Screen()
                 }
             }
         }
 
         return binding.root
-    }
-}
-
-@Composable
-fun Screen() {
-    Box(modifier = Modifier.fillMaxSize()) {
-        Text(
-            text = "Hello",
-            fontSize = 28.sp,
-            color = Color.Green,
-            modifier = Modifier.fillMaxSize()
-        )
-    }
-}
-
-@Composable
-@Preview
-fun Pr() {
-    AppTheme {
-        Screen()
     }
 }
