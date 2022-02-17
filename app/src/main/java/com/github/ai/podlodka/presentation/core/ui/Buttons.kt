@@ -28,7 +28,7 @@ fun ButtonWithIcon(
     Box(modifier = modifier) {
         Button(
             shape = CircleShape,
-            colors = ButtonDefaults.buttonColors(backgroundColor = primaryColor),
+            colors = ButtonDefaults.buttonColors(backgroundColor = Color(0x40FFFFFF)),
             onClick = onClick ?: {},
             modifier = Modifier.fillMaxSize()
         ) {
@@ -36,7 +36,6 @@ fun ButtonWithIcon(
                 painter = painterResource(id = iconResId),
                 contentScale = ContentScale.Fit,
                 contentDescription = null,
-                colorFilter = ColorFilter.tint(Color.Black),
                 modifier = Modifier
                     .size(iconSize)
             )
