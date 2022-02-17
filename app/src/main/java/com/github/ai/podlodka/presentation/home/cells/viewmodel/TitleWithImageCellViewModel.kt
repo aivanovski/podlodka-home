@@ -5,5 +5,4 @@ import com.github.ai.podlodka.presentation.home.cells.model.TitleWithImageCellMo
 
 class TitleWithImageCellViewModel(
     override val model: TitleWithImageCellModel
-) : BaseCellViewModel(model) {
-}
+) : BaseCellViewModel(model)
